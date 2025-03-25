@@ -1,91 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.1.2">
   <diagram name="Train Enquiry Workflow" id="workflow-diagram">
     <mxGraphModel dx="872" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- Start Node -->
-        <mxCell id="start" value="Start: User Opens App" style="ellipse;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+        <mxCell id="start" value="Start: User Opens App" style="ellipse;fillColor=#D5E8D4;strokeColor=#82B366;" parent="1" vertex="1">
           <mxGeometry x="300" y="50" width="160" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Choose Query Type -->
-        <mxCell id="query_choice" value="Select: Source to Destination / PNR Check" style="rounded=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+        <mxCell id="query_choice" value="Select: Source to Destination / PNR Check" style="rounded=1;fillColor=#FFF2CC;strokeColor=#D6B656;" parent="1" vertex="1">
           <mxGeometry x="260" y="130" width="240" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge1" edge="1" parent="1" source="start" target="query_choice">
+        <mxCell id="edge1" parent="1" source="start" target="query_choice" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Fetch Train List -->
-        <mxCell id="fetch_trains" value="Fetch Train List" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+        <mxCell id="fetch_trains" value="Fetch Train List" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" parent="1" vertex="1">
           <mxGeometry x="280" y="210" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge2" edge="1" parent="1" source="query_choice" target="fetch_trains">
+        <mxCell id="edge2" parent="1" source="query_choice" target="fetch_trains" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Select Train -->
-        <mxCell id="select_train" value="User Selects a Train" style="ellipse;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
-          <mxGeometry x="300" y="290" width="200" height="50" as="geometry" />
+        <mxCell id="edge3" parent="1" source="fetch_trains" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="290" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="edge3" edge="1" parent="1" source="fetch_trains" target="select_train">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="train_delay" value="Check if Train is Delayed" style="rhombus;fillColor=#F8CECC;strokeColor=#B85450;" parent="1" vertex="1">
+          <mxGeometry x="289" y="420" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Check if Train is Delayed -->
-        <mxCell id="train_delay" value="Check if Train is Delayed" style="rhombus;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
-          <mxGeometry x="310" y="370" width="180" height="50" as="geometry" />
+        <mxCell id="alt_train" value="Find Alternative Train" style="rounded=1;fillColor=#E1D5E7;strokeColor=#9673A6;" parent="1" vertex="1">
+          <mxGeometry x="519" y="420" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge4" edge="1" parent="1" source="select_train" target="train_delay">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="edge5" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="469" y="443" as="sourcePoint" />
+            <mxPoint x="519" y="443" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-
-        <!-- Alternative Train Search -->
-        <mxCell id="alt_train" value="Find Alternative Train" style="rounded=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
-          <mxGeometry x="260" y="450" width="200" height="50" as="geometry" />
+        <mxCell id="other_transport" value="Compare with Bus/Tempo" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;" parent="1" vertex="1">
+          <mxGeometry x="9" y="420" width="220" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge5" edge="1" parent="1" source="train_delay" target="alt_train">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- Check Other Transportation -->
-        <mxCell id="other_transport" value="Compare with Bus/Tempo" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="280" y="530" width="220" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="edge6" edge="1" parent="1" source="alt_train" target="other_transport">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- AI Chatbot Guides Decision -->
-        <mxCell id="ai_chatbot" value="AI Chatbot Guides User" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+        <mxCell id="ai_chatbot" value="AI Chatbot Guides User" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" parent="1" vertex="1">
           <mxGeometry x="310" y="610" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge7" edge="1" parent="1" source="other_transport" target="ai_chatbot">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- End Node -->
-        <mxCell id="end" value="End: User Takes Action" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+        <mxCell id="end" value="End: User Takes Action" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" parent="1" vertex="1">
           <mxGeometry x="320" y="690" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge8" edge="1" parent="1" source="ai_chatbot" target="end">
+        <mxCell id="edge8" parent="1" source="ai_chatbot" target="end" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="289" y="443" as="sourcePoint" />
+            <mxPoint x="230" y="443" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V3dKVhNCmECY6gkNtE6v-3" target="V3dKVhNCmECY6gkNtE6v-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-3" value="Select Train From List" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="290" y="290" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-4" value="Train selected with Live location" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="580" y="285" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-6" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="V3dKVhNCmECY6gkNtE6v-3">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="330" y="350" as="sourcePoint" />
+            <mxPoint x="380" y="420" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
 </mxfile>
-
-<!-- Explanation of Workflow -->
-<!-- 1. Start: The user opens the app. -->
-<!-- 2. Query Type Selection: User selects either Source-Destination search or PNR status check. -->
-<!-- 3. Fetch Train List: The system retrieves all available trains. -->
-<!-- 4. User Selects Train: The user picks a train from the available list. -->
-<!-- 5. Train Delay Check: The system checks if the selected train is delayed. -->
-<!-- 6. Alternative Train Search: If delayed, the system finds alternative trains. -->
-<!-- 7. Other Transportation Check: If no alternative trains, AI compares bus and tempo travel options. -->
-<!-- 8. AI Chatbot Guides User: AI suggests the best travel option based on real-time data. -->
-<!-- 9. End: The user makes a final decision based on AI recommendations. -->
