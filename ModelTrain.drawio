@@ -28,30 +28,20 @@
           <mxGeometry x="289" y="420" width="180" height="50" as="geometry" />
         </mxCell>
         <mxCell id="alt_train" value="Find Alternative Train" style="rounded=1;fillColor=#E1D5E7;strokeColor=#9673A6;" parent="1" vertex="1">
-          <mxGeometry x="519" y="420" width="200" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="edge5" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="469" y="443" as="sourcePoint" />
-            <mxPoint x="519" y="443" as="targetPoint" />
-          </mxGeometry>
+          <mxGeometry x="425" y="620" width="200" height="50" as="geometry" />
         </mxCell>
         <mxCell id="other_transport" value="Compare with Bus/Tempo" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;" parent="1" vertex="1">
-          <mxGeometry x="9" y="420" width="220" height="50" as="geometry" />
+          <mxGeometry x="150" y="630" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ai_chatbot" value="AI Chatbot Guides User" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" parent="1" vertex="1">
-          <mxGeometry x="310" y="610" width="200" height="50" as="geometry" />
+          <mxGeometry x="288" y="528" width="200" height="50" as="geometry" />
         </mxCell>
         <mxCell id="end" value="End: User Takes Action" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" parent="1" vertex="1">
-          <mxGeometry x="320" y="690" width="180" height="50" as="geometry" />
+          <mxGeometry x="308" y="810" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge8" parent="1" source="ai_chatbot" target="end" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="V3dKVhNCmECY6gkNtE6v-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="289" y="443" as="sourcePoint" />
-            <mxPoint x="230" y="443" as="targetPoint" />
+        <mxCell id="edge8" style="entryX=0.682;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ai_chatbot" target="other_transport" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="V3dKVhNCmECY6gkNtE6v-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V3dKVhNCmECY6gkNtE6v-3" target="V3dKVhNCmECY6gkNtE6v-4">
@@ -68,6 +58,18 @@
             <mxPoint x="330" y="350" as="sourcePoint" />
             <mxPoint x="380" y="420" as="targetPoint" />
             <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.46;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="train_delay" target="ai_chatbot">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="600" as="sourcePoint" />
+            <mxPoint x="360" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3dKVhNCmECY6gkNtE6v-10" style="entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ai_chatbot" target="alt_train">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="580" as="sourcePoint" />
+            <mxPoint x="470" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
