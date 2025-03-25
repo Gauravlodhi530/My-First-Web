@@ -7,53 +7,53 @@
         <mxCell id="1" parent="0" />
 
         <!-- Start Node -->
-        <mxCell id="start" value="Start" style="ellipse;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="300" y="50" width="100" height="50" as="geometry" />
+        <mxCell id="start" value="Start: User Initiates Query" style="ellipse;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="160" height="50" as="geometry" />
         </mxCell>
 
         <!-- User Input -->
         <mxCell id="input" value="User Inputs Train No/PNR" style="rounded=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
-          <mxGeometry x="280" y="130" width="140" height="50" as="geometry" />
+          <mxGeometry x="280" y="130" width="180" height="50" as="geometry" />
         </mxCell>
         <mxCell id="edge1" edge="1" parent="1" source="start" target="input">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         <!-- Fetch API Data -->
-        <mxCell id="fetch_api" value="Fetch Data from API" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
-          <mxGeometry x="280" y="210" width="140" height="50" as="geometry" />
+        <mxCell id="fetch_api" value="System Fetches Live Train Status" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="210" width="180" height="50" as="geometry" />
         </mxCell>
         <mxCell id="edge2" edge="1" parent="1" source="input" target="fetch_api">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         <!-- AI Processing -->
-        <mxCell id="ai_processing" value="AI Processing" style="ellipse;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
-          <mxGeometry x="300" y="290" width="100" height="50" as="geometry" />
+        <mxCell id="ai_processing" value="AI Chatbot Confirms Ticket Status" style="ellipse;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="290" width="180" height="50" as="geometry" />
         </mxCell>
         <mxCell id="edge3" edge="1" parent="1" source="fetch_api" target="ai_processing">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Decision: Valid Data? -->
-        <mxCell id="decision" value="Valid Data?" style="rhombus;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
-          <mxGeometry x="310" y="380" width="80" height="50" as="geometry" />
+        <!-- AI Query Handling -->
+        <mxCell id="ai_queries" value="AI Handles Text/Voice Queries" style="rounded=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="370" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge4" edge="1" parent="1" source="ai_processing" target="decision">
+        <mxCell id="edge4" edge="1" parent="1" source="ai_processing" target="ai_queries">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         <!-- Display Train Status -->
         <mxCell id="train_status" value="Display Train Status / PNR Details" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="260" y="470" width="180" height="50" as="geometry" />
+          <mxGeometry x="260" y="450" width="220" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge5" edge="1" parent="1" source="decision" target="train_status">
+        <mxCell id="edge5" edge="1" parent="1" source="ai_queries" target="train_status">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         <!-- End Node -->
-        <mxCell id="end" value="End" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
-          <mxGeometry x="300" y="560" width="100" height="50" as="geometry" />
+        <mxCell id="end" value="End: Display Results to User" style="ellipse;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="530" width="160" height="50" as="geometry" />
         </mxCell>
         <mxCell id="edge6" edge="1" parent="1" source="train_status" target="end">
           <mxGeometry relative="1" as="geometry" />
@@ -62,3 +62,12 @@
     </mxGraphModel>
   </diagram>
 </mxfile>
+
+<!-- Explanation of Workflow -->
+<!-- 1. Start: The user initiates a query for train status or PNR details. -->
+<!-- 2. User Input: The user enters a train number or PNR. -->
+<!-- 3. Fetch API Data: The system fetches live train status from the Indian Railway API. -->
+<!-- 4. AI Processing: The AI chatbot processes the user's query and confirms ticket status. -->
+<!-- 5. AI Query Handling: AI chatbot manages text and voice-based queries for train details. -->
+<!-- 6. Display Train Status: If valid data is available, it is displayed to the user. -->
+<!-- 7. End: The process concludes by delivering the requested information to the user. -->
